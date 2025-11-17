@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
+    <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1363788345128651'); 
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1363788345128651&ev=PageView&noscript=1"
+/></noscript>
+<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jasa Desain - Landing Page</title>
     <style>
@@ -9,6 +24,7 @@
         header { padding: 80px 20px; text-align: center; background: #111; color: white; }
         header h1 { font-size: 48px; margin: 0; }
         header p { font-size: 20px; margin-top: 10px; }
+        /* Perubahan di sini: .btn sekarang memiliki onclick event untuk Lead */
         .btn { display: inline-block; padding: 14px 28px; background: #25d366; color: white; text-decoration: none; font-size: 20px; border-radius: 8px; margin-top: 20px; }
 
         section { padding: 60px 20px; max-width: 1100px; margin: auto; }
@@ -47,16 +63,14 @@
 </head>
 <body>
 
-    <!-- HERO SECTION -->
     <header>
         <h1>PT. Kamallogo Digital Kreatif</h1>
         <p>Melayani pembuatan desain Logo berkualitas dengan harga terjangkau</p>
         <p>Dipercaya lebih dari 2.500 Perusahaan & UMKM</p>
         <p>"Jangan Buang Waktu! Dapatkan konsultasi desain logo kantor hukum Anda GRATIS dengan spesialis kami. Klik WA di bawah ini sekarang!"</p>
-        <a class="btn" href="https://wa.me/6281131122225" target="_blank">Konsultasi via WhatsApp (Gratis)</a>
+        <a class="btn" href="https://wa.me/6281131122225" target="_blank" onclick="fbq('track', 'Lead');">Konsultasi via WhatsApp (Gratis)</a>
     </header>
 
-    <!-- BENEFIT SECTION -->
     <section>
         <div class="title">Keunggulan Layanan Kami</div>
         <div class="benefits">
@@ -66,7 +80,6 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
     <section>
         <div class="title">Portofolio Logo Kantor Hukum</div>
         <div class="portfolio">
@@ -100,17 +113,9 @@
             <div class="img-box"><img src="https://raw.githubusercontent.com/mkamal03031991/portfolio-logo/main/28.png"></div>
             <div class="img-box"><img src="https://raw.githubusercontent.com/mkamal03031991/portfolio-logo/main/29.png"></div>
         </div>
-         <!-- 
-            <div class="title">Testimoni Pelanggan</div>
-            <div class="img-box"><img src="https://raw.githubusercontent.com/mkamal03031991/Testimoni/main/WhatsApp Image 2025-11-16 at 16.57.15.jpeg"></div>
-            <div class="img-box"><img src="https://raw.githubusercontent.com/mkamal03031991/Testimoni/main/WhatsApp Image 2025-11-16 at 16.57.16 (1).jpeg"></div>
-            <div class="img-box"><img src="https://raw.githubusercontent.com/mkamal03031991/Testimoni/main/WhatsApp Image 2025-11-16 at 16.57.16 (2).jpeg"></div>
-            <div class="img-box"><img src="https://raw.githubusercontent.com/mkamal03031991/Testimoni/main/WhatsApp Image 2025-11-16 at 16.57.16.jpeg"></div>
-         -->
-             </div>
+            </div>
     </section>
 
-<!-- TESTIMONI SECTION -->
 <section style="padding:40px 20px; font-family:Arial, sans-serif;">
 <div class="title" style="text-align:center; font-size:28px; margin-bottom:25px; font-weight:bold;">Testimoni Pelanggan</div>
 
@@ -145,7 +150,6 @@
 </div>
 </section>
 
-    <!-- PRICING SECTION -->
     <section>
         <div class="title">Paket Harga</div>
         <div class="pricing">
@@ -153,49 +157,40 @@
                 <h3>Basic</h3>
                 <div class="price">100rb</div>
                 <p>• Batas revisi 6x<br>• File PNG, CDR & PDF</p>
-                <a class="btn" href="https://wa.me/6281131122225" target="_blank">Konsultasi GRATIS via WhatsApp</a>
+                <a class="btn" href="https://wa.me/6281131122225" target="_blank" onclick="fbq('track', 'Lead');">Konsultasi GRATIS via WhatsApp</a>
             </div>
 
             <div class="price-box">
                 <h3>Standar</h3>
                 <div class="price">150rb</div>
                 <p>• Batas revisi 10x<br>• File PNG, CDR & PDF<br>• Bonus desain kop surat</p>
-                <a class="btn" href="https://wa.me/6281131122225" target="_blank">Konsultasi GRATIS via WhatsApp</a>
+                <a class="btn" href="https://wa.me/6281131122225" target="_blank" onclick="fbq('track', 'Lead');">Konsultasi GRATIS via WhatsApp</a>
             </div>
 
             <div class="price-box">
                 <h3>Premium</h3>
                 <div class="price">250rb</div>
                 <p>• Batas revisi 15x<br>• File PNG, CDR & PDF<br>• Bonus kop surat, kartu nama, desain stempel</p>
-                <a class="btn" href="https://wa.me/6281131122225" target="_blank">Konsultasi GRATIS via WhatsApp</a>
+                <a class="btn" href="https://wa.me/6281131122225" target="_blank" onclick="fbq('track', 'Lead');">Konsultasi GRATIS via WhatsApp</a>
             </div>
 
             <div class="price-box">
                 <h3>Extra Premium</h3>
                 <div class="price">350rb</div>
                 <p>• Batas revisi unlimited<br>• File PNG, CDR & PDF<br>• Bonus kop surat, kartu nama, desain stempel, filosofi logo</p>
-                <a class="btn" href="https://wa.me/6281131122225" target="_blank">Konsultasi GRATIS via WhatsApp/a>
+                <a class="btn" href="https://wa.me/6281131122225" target="_blank" onclick="fbq('track', 'Lead');">Konsultasi GRATIS via WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA AKHIR -->
     <section style="text-align:center;">
         <div class="title">"Siap Tampil Beda? Konsultasikan Desain Anda Sekarang."</div>
-        <a class="btn" href="https://wa.me/6281131122225" target="_blank">Konsultasi via WhatsApp (Gratis)</a>
+        <a class="btn" href="https://wa.me/6281131122225" target="_blank" onclick="fbq('track', 'Lead');">Konsultasi via WhatsApp (Gratis)</a>
     </section>
 
     <footer>
-        © 2025 - Jasa Desain Logo | PT. Kamallogo Digital Kreatif  -  Situbondo, Jawa Timur | Kontak: 0811-3112-2225
+        © 2025 - Jasa Desain Logo | PT. Kamallogo Digital Kreatif - Situbondo, Jawa Timur | Kontak: 0811-3112-2225
     </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
