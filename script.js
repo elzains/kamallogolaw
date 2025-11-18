@@ -64,11 +64,7 @@ function autoLoad() {
     container.appendChild(el);
   });
 }
-// Scroll 4-grid at once
-const scrollAmount = 350;
-rightArrow.onclick = () => container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-leftArrow.onclick = () => container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-// START GET DATA IMAGE PORTFOLIO FROM GITHUBHOST
+// END GET DATA IMAGE PORTFOLIO FROM GITHUBHOST
 
 // START DYNAMIC LOOP FOR CARD PRICING
 function renderPricingCards() {
