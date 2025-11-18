@@ -59,7 +59,7 @@ autoLoad();
 function autoLoad() {
   images.forEach(img => {
     const el = document.createElement("div");
-    el.className = "bg-white p-3 rounded-xl shadow flex items-center justify-center";
+    el.className = "bg-white rounded-xl shadow flex items-center justify-center";
     el.innerHTML = `<img src="${img.src}" alt="${img.alt}" class="w-full h-auto object-contain rounded-xl">`;
     container.appendChild(el);
   });

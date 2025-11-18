@@ -6,20 +6,55 @@
   <title>Jasa Desain Logo Kantor Hukum - PT. Kamallogo</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
-    /* Scroll Arrow Styling */
     .scroll-btn {
       @apply absolute top-1/2 -translate-y-1/2 bg-black bg-opacity-60 text-white px-3 py-4 rounded-full cursor-pointer hover:bg-opacity-80 transition;
     }
+    .animate-slider {
+    background: url(https://wallpapers.com/images/featured/teamwork-pictures-don5zvz7d1ip1ovb.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <!-- START HEADER -->
-  <header class="bg-black text-white py-20 px-5 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold">PT. Kamallogo Digital Kreatif</h1>
-    <p class="text-lg md:text-xl mt-4 font-light">Jasa Desain Logo Profesional <strong>Khusus Kantor Hukum & Notaris</strong></p>
-    <p class="text-lg mt-1">Dipercaya lebih dari 2.500 Perusahaan & UMKM</p>
-    <p class="text-green-400 font-semibold mt-5 max-w-2xl mx-auto">“Jangan Buang Waktu! Dapatkan konsultasi desain logo kantor hukum Anda GRATIS dengan spesialis kami. Hubungi kami sekarang!”</p>
-  </header>
+  <!-- HEADER MODERN -->
+  <header class="relative w-full pt-4 flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+  <!-- Background -->
+  <!-- <div class="absolute inset-0">
+    <img src="https://wallpapers.com/images/featured/teamwork-pictures-don5zvz7d1ip1ovb.jpg"
+      class="w-full h-full object-cover object-center scale-110 animate-[pulse_6s_ease-in-out_infinite] opacity-70" />
+  </div> -->
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+
+  <!-- Floating Shapes (dibuang posisi top-left / bottom-right, diganti center) -->
+  <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+    <div class="w-40 h-40 bg-white/5 rounded-full blur-3xl animate-[ping_8s_linear_infinite] absolute -left-20"></div>
+    <div class="w-52 h-52 bg-blue-500/10 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite] absolute -right-24"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-6 text-center max-w-6xl mx-auto">
+    <h1 class="text-[1.8rem] md:text-[4rem] font-extrabold tracking-tight drop-shadow-lg mt-[1rem]">
+      PT. Kamallogo Digital Kreatif
+    </h1>
+
+    <p class="text-lg md:text-xl mt-4 font-light text-gray-200">
+      Jasa Desain Logo Profesional <strong>Khusus Kantor Hukum &amp; Notaris</strong>
+    </p>
+
+    <p class="text-md mt-2 text-gray-300">
+      Dipercaya lebih dari 2.500 Perusahaan &amp; UMKM
+    </p>
+
+    <p class="text-green-400 font-semibold mt-6 bg-white/10 backdrop-blur-lg px-5 py-3 rounded-xl shadow-lg border border-white/10 max-w-3xl mx-auto mb-[3rem]">
+      “Jangan Buang Waktu! Dapatkan konsultasi desain logo kantor hukum Anda GRATIS dengan spesialis kami. Hubungi kami sekarang!”
+    </p>
+  </div>
+</header>
   <!-- END HEADER -->
   <!-- START FUNFACT -->
   <section class="py-12 bg-gray-50">
@@ -142,7 +177,7 @@
         <div class="space-y-1">
           <p class="text-sm">
             <span class="font-medium text-white">Kontak:</span> 
-            <a href="https://wa.me/6281131122225" class="text-green-400 hover:text-green-300 transition">0811-3112-2225</a>
+            <a href="https://wa.me/6281131122225" class="text-white hover:text-green-300 transition">0811-3112-2225</a>
           </p>
           <p class="text-sm">
             <span class="font-medium text-white">Email:</span> 
