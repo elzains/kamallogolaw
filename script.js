@@ -79,7 +79,7 @@ function renderPricingCards() {
       <div class="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 text-center border border-gray-200 flex flex-col">
         <h3 class="text-xl font-semibold text-gray-800 mb-1">${item.title}</h3>
         <p class="text-3xl font-bold text-gray-900 mb-4">${item.price}</p>
-        <ul class="text-gray-600 text-sm leading-relaxed mb-6 text-left mx-auto list-disc list-inside">
+        <ul class="text-gray-600 text-sm leading-relaxed mb-6 text-left list-disc list-inside">
           ${featureList}
         </ul>
 
@@ -97,4 +97,5 @@ function renderPricingCards() {
   }).join("");
 }
 renderPricingCards();
+lucide.createIcons();
 // END DYNAMIC LOOP FOR CARD PRICING

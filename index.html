@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jasa Desain Logo Kantor Hukum - PT. Kamallogo</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     .scroll-btn {
       @apply absolute top-1/2 -translate-y-1/2 bg-black bg-opacity-60 text-white px-3 py-4 rounded-full cursor-pointer hover:bg-opacity-80 transition;
@@ -21,21 +22,13 @@
   <!-- START HEADER -->
   <!-- HEADER MODERN -->
   <header class="relative w-full pt-4 flex items-center justify-center overflow-hidden bg-gray-900 text-white">
-  <!-- Background -->
-  <!-- <div class="absolute inset-0">
-    <img src="https://wallpapers.com/images/featured/teamwork-pictures-don5zvz7d1ip1ovb.jpg"
-      class="w-full h-full object-cover object-center scale-110 animate-[pulse_6s_ease-in-out_infinite] opacity-70" />
-  </div> -->
-
   <!-- Gradient Overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
-
   <!-- Floating Shapes (dibuang posisi top-left / bottom-right, diganti center) -->
   <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
     <div class="w-40 h-40 bg-white/5 rounded-full blur-3xl animate-[ping_8s_linear_infinite] absolute -left-20"></div>
     <div class="w-52 h-52 bg-blue-500/10 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite] absolute -right-24"></div>
   </div>
-
   <!-- Content -->
   <div class="relative z-10 px-6 text-center max-w-6xl mx-auto">
     <h1 class="text-[1.8rem] md:text-[4rem] font-extrabold tracking-tight drop-shadow-lg mt-[1rem]">
@@ -57,6 +50,7 @@
 </header>
   <!-- END HEADER -->
   <!-- START FUNFACT -->
+  <!-- CDN Lucide Icons (jika belum ada) -->
   <section class="py-12 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">
@@ -64,35 +58,63 @@
       </h2>
 
       <div class="grid gap-6 md:grid-cols-3">
+
         <!-- Box 1 -->
         <div class="p-6 bg-white shadow-lg rounded-2xl transition hover:-translate-y-1 hover:shadow-xl">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Desain Berfilosofi Hukum
-          </h3>
-          <p class="text-gray-600">
-            Logo dibuat berdasarkan riset filosofi hukum dan kantor Anda.
-          </p>
+          <div class="grid grid-cols-4 gap-4 items-start">
+            <!-- ICON -->
+            <div class="col-span-1 flex justify-center">
+              <i data-lucide="scale" class="w-10 h-10 text-black"></i>
+            </div>
+
+            <!-- TEXT -->
+            <div class="col-span-3">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Desain Berfilosofi Hukum
+              </h3>
+              <p class="text-gray-600">
+                Logo dibuat berdasarkan riset filosofi hukum dan kantor Anda.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Box 2 -->
         <div class="p-6 bg-white shadow-lg rounded-2xl transition hover:-translate-y-1 hover:shadow-xl">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Revisi Sesuai Paket
-          </h3>
-          <p class="text-gray-600">
-            Revisi fleksibel mengikuti paket yang Anda pilih.
-          </p>
+          <div class="grid grid-cols-4 gap-4 items-start">
+            <div class="col-span-1 flex justify-center">
+              <i data-lucide="pen-line" class="w-10 h-10 text-black"></i>
+            </div>
+
+            <div class="col-span-3">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Revisi Sesuai Paket
+              </h3>
+              <p class="text-gray-600">
+                Revisi fleksibel mengikuti paket yang Anda pilih.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Box 3 -->
         <div class="p-6 bg-white shadow-lg rounded-2xl transition hover:-translate-y-1 hover:shadow-xl">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Garansi Penyelesaian Tepat Waktu
-          </h3>
-          <p class="text-gray-600">
-            Logo siap dalam 24 Jam kerja, atau uang kembali.
-          </p>
+          <div class="grid grid-cols-4 gap-4 items-start">
+            <div class="col-span-1 flex justify-center">
+              <i data-lucide="clock" class="w-10 h-10 text-black"></i>
+            </div>
+
+            <div class="col-span-3">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Garansi Penyelesaian Tepat Waktu
+              </h3>
+              <p class="text-gray-600">
+                Logo siap dalam 24 Jam kerja, atau uang kembali.
+              </p>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
