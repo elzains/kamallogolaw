@@ -99,3 +99,92 @@ function renderPricingCards() {
 renderPricingCards();
 lucide.createIcons();
 // END DYNAMIC LOOP FOR CARD PRICING
+
+// START CS
+const waBtn = document.getElementById('waBtn');
+    const card = document.getElementById('card');
+    const closeCard = document.getElementById('closeCard');
+    const csItems = document.querySelectorAll('.cs-item');
+
+    function openPanel() {
+      card.classList.remove('hidden');
+      waBtn.setAttribute('aria-expanded', 'true');
+      card.classList.add('panel-enter-active');
+      setTimeout(()=> card.classList.remove('panel-enter-active'), 220);
+    }
+    function closePanel() {
+      card.classList.add('panel-leave-active');
+      setTimeout(()=>{
+        card.classList.remove('panel-leave-active');
+        card.classList.add('hidden');
+      }, 140);
+      waBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    // STOP PROPAGATION agar document click tidak menutup panel saat kita klik tombol atau isi panel
+    waBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // <<< penting
+      e.preventDefault();
+      if (card.classList.contains('hidden')) openPanel();
+      else closePanel();
+    });
+
+    // Jangan biarkan klik di dalam card merembes ke document
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    closeCard.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      closePanel();
+    });
+
+    // Klik di luar panel akan menutup
+    document.addEventListener('click', (e) => {
+      // jika klik bukan di dalam #waPanel, tutup
+      if (!e.target.closest('#waPanel') && !card.classList.contains('hidden')) {
+        closePanel();
+      }
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !card.classList.contains('hidden')) closePanel();
+    });
+
+    // CS item: stopPropagation lalu buka wa link
+    csItems.forEach(item => {
+      item.addEventListener('click', (ev) => {
+        ev.stopPropagation(); // <<< cegah bubbling
+        ev.preventDefault();
+        const number = item.getAttribute('data-number');
+        const name = item.getAttribute('data-name') || 'CS';
+        const message = encodeURIComponent(`Halo ${name}, saya mau tanya tentang...`);
+        const url = `https://wa.me/${number}?text=${message}`;
+        window.open(url, '_blank');
+        // Optional: tutup panel setelah klik
+        closePanel();
+      });
+    });
+
+    // Accessibility helper (enter/space)
+    waBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        waBtn.click();
+      }
+    });
+
+    // adapt small screens
+    function adaptToViewport() {
+      if (window.innerWidth < 420) {
+        waBtn.classList.add('w-full', 'justify-center');
+        waBtn.querySelector('span')?.classList.remove('hidden');
+      } else {
+        waBtn.classList.remove('w-full', 'justify-center');
+      }
+    }
+    window.addEventListener('resize', adaptToViewport);
+    adaptToViewport();
+// END CS

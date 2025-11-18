@@ -1,46 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jasa Desain Logo Kantor Hukum - PT. Kamallogo</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhatsApp CS Floating Button — Fix</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .no-outline:focus { outline: 2px solid transparent; box-shadow: 0 0 0 4px rgba(34,197,94,0.12); }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 12px); }
+    .panel-enter { transform: translateY(8px) scale(0.98); opacity: 0; }
+    .panel-enter-active { transform: translateY(0) scale(1); opacity: 1; transition: transform .18s cubic-bezier(.2,.9,.3,1), opacity .18s; }
+    .panel-leave-active { transform: translateY(10px); opacity: 0; transition: transform .12s ease, opacity .12s; }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- HEADER MODERN -->
-  <header class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
-    <!-- Background -->
-    <div class="absolute inset-0">
-      <img src="https://wallpapers.com/images/featured/teamwork-pictures-don5zvz7d1ip1ovb.jpg" class="w-full h-full object-cover object-center scale-110 animate-[pulse_6s_ease-in-out_infinite] opacity-70" />
+<body class="bg-slate-50">
+
+  <main class="min-h-screen p-6">
+    <h1 class="text-2xl font-semibold mb-4">Contoh Halaman — Tombol CS WhatsApp (FIX)</h1>
+    <p class="text-slate-600">Gulir halaman, tombol akan tetap menempel di bagian bawah. Klik untuk memilih CS.</p>
+    <div class="mt-8 space-y-6">
+      <div class="h-48 bg-white rounded-lg shadow p-4">Konten demo 1</div>
+      <div class="h-48 bg-white rounded-lg shadow p-4">Konten demo 2</div>
+      <div class="h-48 bg-white rounded-lg shadow p-4">Konten demo 3</div>
     </div>
+  </main>
 
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+  <div class="safe-bottom fixed inset-x-0 bottom-4 z-50 pointer-events-none md:bottom-6">
+    <div class="max-w-xl mx-auto px-4 md:px-6">
+      <div class="flex justify-end">
+        <div id="waPanel" class="pointer-events-auto w-full md:w-80 transform origin-bottom-right">
+          <div id="card"
+               class="hidden bg-white/95 backdrop-blur rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+            <div class="flex items-center justify-between p-3.5">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-green-400 to-green-600 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.52 3.48A11.91 11.91 0 0 0 12.03.02C6.01.02 1.02 5.01 1.02 11.03c0 1.94.5 3.84 1.45 5.53L.02 23l6.64-1.74a11.94 11.94 0 0 0 5.37 1.17h.02c6.02 0 11.01-4.99 11.01-11.01 0-3-1.18-5.82-3.72-7.94zM12.03 20.56c-1.64 0-3.25-.4-4.7-1.16l-.34-.17-3.95 1.03 1.07-3.86-.22-.4A8.96 8.96 0 0 1 3.06 11.03c0-5 4.06-9.05 9.05-9.05 2.42 0 4.69.94 6.41 2.66 1.7 1.7 2.63 3.97 2.63 6.39 0 5-4.06 9.05-9.05 9.05z"/>
+                    <path d="M17.02 14.22c-.28-.14-1.63-.8-1.88-.89-.25-.1-.43-.14-.61.14-.18.28-.71.89-.87 1.07-.16.18-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.56.12-.12.28-.33.42-.5.14-.18.19-.31.29-.52.1-.2.05-.37-.02-.52-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.55-.01s-.51.07-.78.37c-.27.3-1.05 1.03-1.05 2.5 0 1.46 1.08 2.88 1.23 3.08.14.2 2.12 3.4 5.14 4.77 3.02 1.36 3.02.91 3.56.85.54-.06 1.76-.72 2.01-1.41.25-.68.25-1.26.18-1.38-.07-.11-.25-.17-.53-.31z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Butuh bantuan? Chat CS kami</p>
+                  <p class="text-xs text-slate-500">Pilih nomor yang tersedia</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="closeCard" class="no-outline rounded-full p-2 hover:bg-slate-100" title="Tutup" aria-label="Tutup">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-    <!-- Floating Shapes -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute top-10 left-10 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-[ping_8s_linear_infinite]"></div>
-      <div class="absolute bottom-10 right-16 w-52 h-52 bg-blue-500/10 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite]"></div>
+            <div class="divide-y">
+              <a href="#" data-number="6281131122225" data-name="Min" class="cs-item flex items-center gap-3 p-3 hover:bg-slate-50 transition">
+                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 text-white flex items-center justify-center text-green-700 font-semibold">AK1</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <p class="text-sm font-medium truncate">Admin Kamallogo 1</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" data-number="6285258567400" data-name="Min" class="cs-item flex items-center gap-3 p-3 hover:bg-slate-50 transition">
+                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 text-white flex items-center justify-center font-semibold">AK2</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <p class="text-sm font-medium truncate">Admin Kamallogo 2</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-3 flex justify-end">
+            <button id="waBtn"
+                    class="pointer-events-auto inline-flex items-center gap-3 rounded-full px-4 py-3 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 no-outline bg-gradient-to-tr from-green-500 to-green-600 text-white font-medium"
+                    aria-expanded="false" aria-controls="waPanel" aria-label="Buka pilihan CS WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.52 3.48A11.91 11.91 0 0 0 12.03.02C6.01.02 1.02 5.01 1.02 11.03c0 1.94.5 3.84 1.45 5.53L.02 23l6.64-1.74a11.94 11.94 0 0 0 5.37 1.17h.02c6.02 0 11.01-4.99 11.01-11.01 0-3-1.18-5.82-3.72-7.94zM12.03 20.56c-1.64 0-3.25-.4-4.7-1.16l-.34-.17-3.95 1.03 1.07-3.86-.22-.4A8.96 8.96 0 0 1 3.06 11.03c0-5 4.06-9.05 9.05-9.05 2.42 0 4.69.94 6.41 2.66 1.7 1.7 2.63 3.97 2.63 6.39 0 5-4.06 9.05-9.05 9.05z"/>
+                <path d="M17.02 14.22c-.28-.14-1.63-.8-1.88-.89-.25-.1-.43-.14-.61.14-.18.28-.71.89-.87 1.07-.16.18-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.56.12-.12.28-.33.42-.5.14-.18.19-.31.29-.52.1-.2.05-.37-.02-.52-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.55-.01s-.51.07-.78.37c-.27.3-1.05 1.03-1.05 2.5 0 1.46 1.08 2.88 1.23 3.08.14.2 2.12 3.4 5.14 4.77 3.02 1.36 3.02.91 3.56.85.54-.06 1.76-.72 2.01-1.41.25-.68.25-1.26.18-1.38-.07-.11-.25-.17-.53-.31z"/>
+              </svg>
+              <span class="hidden sm:inline">Chat CS</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Content -->
-    <div class="relative z-10 px-6 text-center max-w-3xl">
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-        PT. Kamallogo Digital Kreatif
-      </h1>
-      <p class="text-lg md:text-xl mt-4 font-light text-gray-200">
-        Jasa Desain Logo Profesional <strong>Khusus Kantor Hukum &amp; Notaris</strong>
-      </p>
-      <p class="text-md mt-2 text-gray-300">Dipercaya lebih dari 2.500 Perusahaan &amp; UMKM</p>
+  <script>
+    const waBtn = document.getElementById('waBtn');
+    const card = document.getElementById('card');
+    const closeCard = document.getElementById('closeCard');
+    const csItems = document.querySelectorAll('.cs-item');
 
-      <p class="text-green-400 font-semibold mt-6 bg-white/10 backdrop-blur-lg px-5 py-3 rounded-xl shadow-lg border border-white/10">
-        “Jangan Buang Waktu! Dapatkan konsultasi desain logo kantor hukum Anda GRATIS dengan spesialis kami. Hubungi kami sekarang!”
-      </p>
+    function openPanel() {
+      card.classList.remove('hidden');
+      waBtn.setAttribute('aria-expanded', 'true');
+      card.classList.add('panel-enter-active');
+      setTimeout(()=> card.classList.remove('panel-enter-active'), 220);
+    }
+    function closePanel() {
+      card.classList.add('panel-leave-active');
+      setTimeout(()=>{
+        card.classList.remove('panel-leave-active');
+        card.classList.add('hidden');
+      }, 140);
+      waBtn.setAttribute('aria-expanded', 'false');
+    }
 
-      <button class="mt-6 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium text-lg rounded-xl shadow-lg transition-all duration-300">
-        Konsultasi Sekarang
-      </button>
-    </div>
-  </header>
+    // STOP PROPAGATION agar document click tidak menutup panel saat kita klik tombol atau isi panel
+    waBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // <<< penting
+      e.preventDefault();
+      if (card.classList.contains('hidden')) openPanel();
+      else closePanel();
+    });
+
+    // Jangan biarkan klik di dalam card merembes ke document
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    closeCard.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      closePanel();
+    });
+
+    // Klik di luar panel akan menutup
+    document.addEventListener('click', (e) => {
+      // jika klik bukan di dalam #waPanel, tutup
+      if (!e.target.closest('#waPanel') && !card.classList.contains('hidden')) {
+        closePanel();
+      }
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !card.classList.contains('hidden')) closePanel();
+    });
+
+    // CS item: stopPropagation lalu buka wa link
+    csItems.forEach(item => {
+      item.addEventListener('click', (ev) => {
+        ev.stopPropagation(); // <<< cegah bubbling
+        ev.preventDefault();
+        const number = item.getAttribute('data-number');
+        const name = item.getAttribute('data-name') || 'CS';
+        const message = encodeURIComponent(`Halo ${name}, saya mau tanya tentang...`);
+        const url = `https://wa.me/${number}?text=${message}`;
+        window.open(url, '_blank');
+        // Optional: tutup panel setelah klik
+        closePanel();
+      });
+    });
+
+    // Accessibility helper (enter/space)
+    waBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        waBtn.click();
+      }
+    });
+
+    // adapt small screens
+    function adaptToViewport() {
+      if (window.innerWidth < 420) {
+        waBtn.classList.add('w-full', 'justify-center');
+        waBtn.querySelector('span')?.classList.remove('hidden');
+      } else {
+        waBtn.classList.remove('w-full', 'justify-center');
+      }
+    }
+    window.addEventListener('resize', adaptToViewport);
+    adaptToViewport();
+  </script>
 </body>
 </html>
